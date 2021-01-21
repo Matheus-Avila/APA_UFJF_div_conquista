@@ -1,25 +1,28 @@
 #include <iostream>
 #include <chrono>
+#include "src/mergesort.h"
 #include "src/insertionsort.h"
-#include "src/quicksort.h"
 #include <time.h>
 #include <vector>
-
+#define Tamanho 100
+#define valor_max 1000
 using namespace std;
 
 
 int main(){
     vector<int> vetor_numeros;
-    vetor_numeros.push_back(25);
-    vetor_numeros.push_back(15);
-    vetor_numeros.push_back(25);
-    vetor_numeros.push_back(5);
-    vetor_numeros.push_back(35);
-    vetor_numeros.push_back(5);
-    vetor_numeros.push_back(35);
-    for(int i = 0; i< vetor_numeros.size(); i++){
-        cout << vetor_numeros[i]<<endl;
+    srand(0);
+    int random = 0;
+    for(int i = 0; i < Tamanho; i++){
+        random = rand()%valor_max;
+        vetor_numeros.push_back(Tamanho-i);
     }
+    mergesort* insert = new mergesort(vetor_numeros, Tamanho);
+    for(int i =0; i < Tamanho; i++){
+        cout << insert->vet[i]<<endl;
+    }
+    cout << "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"<<endl;
+    insert->ordena(0,Tamanho-1);
     
     return 0;
 }

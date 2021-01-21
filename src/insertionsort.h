@@ -1,13 +1,14 @@
 #ifndef _INSERTIONSORT_H_
 #define _INSERTIONSORT_H_
-
+#include <vector>
 class insertionsort
 {
 private:
-    
+    int tamanho;
 public:
-    insertionsort(/* args */);
-    void ordena(int vet[], int tam);
+    std::vector<int> vet;
+    insertionsort(std::vector<int> vetor, int tamanho);
+    void ordena();
     ~insertionsort();
 };
 

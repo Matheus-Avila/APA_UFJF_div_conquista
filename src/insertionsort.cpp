@@ -1,26 +1,26 @@
 #ifndef _INSERTIONSORT_H_
 #include "insertionsort.h"
+#include <vector>
 
-void insertionsort::ordena(int vet[], int tam){
-    int j;
-    int pivo;
-    for(int i = 1; i<tam-1; i++){
-        pivo = vet[i];
-        for(j = i-1; j >= 0; j--){
-            if(pivo<vet[j]){
-                vet[j+1]= vet[j];
-            }
-            else{
-                vet[j+1] = pivo;
-            }
+void insertionsort::ordena(){
+    int i = 0, j = 0;
+    int chave;
+    for(j=1;j<tamanho;j++){
+        chave = vet[j];
+        i = j-1;
+        while(i>0 && vet[i]>chave){
+            vet[i+1] = vet[i];
+            i--;
         }
-
+        vet[i+1] = chave;
     }
 }
 
 
-insertionsort::insertionsort(/* args */)
+insertionsort::insertionsort(std::vector<int> vetor, int tamanho)
 {
+    this->vet = vetor;
+    this->tamanho = tamanho;
 }
 
 insertionsort::~insertionsort()
