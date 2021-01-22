@@ -44,7 +44,10 @@ void mergesort::intercalaMerge(int inicio, int fim, int meio){
 }*/
 void mergesort::intercalaMerge(int inicio, int fim, int meio){  
     int posLivre=0, inicio_vetor1, inicio_vetor2;  
-    int aux[fim+1]; 
+    int aux[fim+1];
+    for(int i=0; i<=fim;i++){
+        aux[i] = 22;
+    }
     inicio_vetor1 = inicio;  
     inicio_vetor2 = meio+1;  
         
@@ -80,18 +83,18 @@ void mergesort::intercalaMerge(int inicio, int fim, int meio){
         posLivre++;  
         inicio_vetor2++;
     }
-    
     //retorne os valores do vetor aux para o vetor X  
     for (int i = inicio; i <=fim; i++)  
     {   
-        this->vet[i] = aux[i];
+        this->vet[i] = aux[i-inicio];
     }
     
 }  
 
 void mergesort::ordena(int inicio, int fim){ 
      
-    int meio; 
+    int meio;
+     
     if (inicio < fim)  
     {  
         meio = int((inicio+fim)/2);  

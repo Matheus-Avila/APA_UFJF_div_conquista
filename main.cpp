@@ -17,12 +17,14 @@ int main(){
         random = rand()%valor_max;
         vetor_numeros.push_back(Tamanho-i);
     }
-    mergesort* insert = new mergesort(vetor_numeros, Tamanho);
+    mergesort* merge = new mergesort(vetor_numeros, Tamanho);
     for(int i =0; i < Tamanho; i++){
-        cout << insert->vet[i]<<endl;
+        cout << merge->vet[i]<<endl;
     }
     cout << "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"<<endl;
-    insert->ordena(0,Tamanho-1);
-    
+    merge->ordena(0,Tamanho-1);
+    for(int i =0; i < Tamanho; i++){
+        cout << merge->vet[i]<<endl;
+    }
     return 0;
 }
