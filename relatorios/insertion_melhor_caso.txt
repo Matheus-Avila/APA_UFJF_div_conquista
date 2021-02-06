@@ -1,0 +1,4 @@
+Tempo medio de execucao no melhor caso de um vetor de tamanho 1000
+9 microssegundos
+Tempo medio de execucao no melhor caso de um vetor de tamanho 1000
+15.4 microssegundos
