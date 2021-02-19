@@ -9,45 +9,10 @@ mergesort::mergesort(std::vector<int> vetor, int tam){
 
 mergesort::~mergesort(){
 
-}/*
-void mergesort::intercalaMerge(int inicio, int fim, int meio){
-    int n1 = meio - inicio + 1;
-    int n2 = fim - meio;
-
-    int *L = new int[n1];
-    int *R = new int[n2];
-    L[n1-1] = -1;
-    R[n2-1] = -1;
-
-    for(int i =0; i< n1-1;i++){
-        L[i] = vet[inicio+i-1];
-    }
-    for(int j =0; j< n2-1;j++){
-        R[j] = vet[meio+j];
-    }
-    int i = 0;
-    int j = 0;
-    for(int k = inicio; k< fim;k++){
-        if(L[i]<=R[i] && L[i] != -1){
-            vet[k] = L[i];
-            i++;
-        }
-        else{
-            vet[k] = R[i];
-            j++;
-        }
-        
-    }
-
-    delete []L;
-    delete []R;
-}*/
+}
 void mergesort::intercalaMerge(int inicio, int fim, int meio){  
     int posLivre=0, inicio_vetor1, inicio_vetor2;  
     int aux[fim+1];
-    for(int i=0; i<=fim;i++){
-        aux[i] = 22;
-    }
     inicio_vetor1 = inicio;  
     inicio_vetor2 = meio+1;  
         

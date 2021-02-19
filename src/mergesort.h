@@ -7,8 +7,8 @@ class mergesort
 private:
     int tamanho;
     void intercalaMerge(int inicio, int fim, int meio);
-public:
     std::vector<int> vet;
+public:
     mergesort(std::vector<int> vetor, int tam);
     void ordena(int inicio, int fim);
     ~mergesort();

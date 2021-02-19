@@ -5,8 +5,8 @@ class insertionsort
 {
 private:
     int tamanho;
-public:
     std::vector<int> vet;
+public:
     insertionsort(std::vector<int> vetor, int tamanho);
     void ordena();
     ~insertionsort();

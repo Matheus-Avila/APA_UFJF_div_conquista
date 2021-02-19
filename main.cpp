@@ -5,19 +5,9 @@
 #include "src/insertionsort.h"
 #include <time.h>
 #include <vector>
-#define Tamanho 1000//100000 // 1000 // 10000 // 1000000
-#define valor_max 100000
+#define Tamanho 100000
 
 using namespace std;
-
-/*
-vector<int> vetor_numeros;
-    srand(0);
-    int random = 0;
-    for(int i = 0; i < Tamanho; i++){
-        random = rand()%valor_max;
-        vetor_numeros.push_back(Tamanho-i);
-    }*/
 
 vector<int> cria_vetor(int tipo_vetor){
 
@@ -63,8 +53,10 @@ void salva_resultados(int menu, double media_tempo_execucao){
 }
 void executa_merge(int tipo_vetor){
     double media_tempo_execucao = 0;
-    vector<int> vetor_numeros = cria_vetor(tipo_vetor);
+    vector<int> vetor_numeros;
     for(int i =0; i < 10; i++){
+        cout << "Iteracao " << i << " merge" << endl;
+        vetor_numeros = cria_vetor(tipo_vetor);
         mergesort* merge = new mergesort(vetor_numeros, Tamanho);
         std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
         merge->ordena(0, Tamanho-1);
@@ -77,8 +69,10 @@ void executa_merge(int tipo_vetor){
 
 void executa_insertion(int tipo_vetor){
     double media_tempo_execucao = 0;
-    vector<int> vetor_numeros = cria_vetor(tipo_vetor);
+    vector<int> vetor_numeros;
     for(int i =0; i < 10; i++){
+        cout << "Iteracao " << i << " insertion" << endl;
+        vetor_numeros = cria_vetor(tipo_vetor);
         insertionsort* insertion = new insertionsort(vetor_numeros, Tamanho);
         std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
         insertion->ordena();
@@ -102,13 +96,12 @@ void exibeMenu(){
         cout << "5: Executar todas as opções acima" << endl;
         cout << "0: Encerra o programa"<< endl;
         
-        if ( !(cin >> menu) )
-        {
+        if (!(cin >> menu)){
           cin.clear();
           cin.ignore();
           menu = 9;
         }
-
+        
         switch (menu)
         {
         case 1://Melhor caso
@@ -130,8 +123,11 @@ void exibeMenu(){
 
         case 5://Todos os casos a cima serão executados
             executa_merge(1);
+            cout << "merge 1 finalizado" << endl;
             executa_merge(2);
+            cout << "merge 2 finalizado" << endl;
             executa_insertion(3);
+            cout << "insertion 1 finalizado" << endl;
             executa_insertion(4);
             break;
 

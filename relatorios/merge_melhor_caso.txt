@@ -2,3 +2,9 @@ Tempo medio de execucao no melhor caso de um vetor de tamanho 1000
 2452.2 microssegundos
 Tempo medio de execucao no melhor caso de um vetor de tamanho 1000
 4937.2 microssegundos
+Tempo medio de execucao no melhor caso de um vetor de tamanho 1000
+1575.3 microssegundos
+Tempo medio de execucao no melhor caso de um vetor de tamanho 1000000
+1.29446e+09 microssegundos
+Tempo medio de execucao no melhor caso de um vetor de tamanho 100000
+42855.3 microssegundos
